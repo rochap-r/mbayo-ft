@@ -1,0 +1,42 @@
+/*service img home & index*/
+.service-item{
+    height: 450px!important;
+}
+
+.service-item .service-icon {
+    width: auto;
+    height:auto;
+    transform: rotate(-0deg) !important;
+}
+.service-item .second{
+    height: 60%;
+}
+.service-icon #service_img{
+    max-width:338px;
+    height: 250px;
+}
+
+/*service img show*/
+.mb-5 #service_img{
+    height: 400px;
+}
+
+.global-message{
+    position: fixed;
+    bottom: 285px;
+    font-size:4vmin ;
+    right: 1px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 500px;
+    border-radius: 50px;
+    color: #FFFFFF;
+    z-index:5;
+}
+
+.global-message.info{
+    background-color: #4586ff;
+}
+.global-message.error{
+    background-color: #f70606;
+}
