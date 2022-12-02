@@ -27,9 +27,9 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <p class="mb-0 text-secondary">Total Revenue</p>
-                                    <h4 class="my-1 text-danger">$84,245</h4>
-                                    <p class="mb-0 font-13">+5.4% from last week</p>
+                                    <p class="mb-0 text-secondary">MFT Utilisateurs</p>
+                                    <h4 class="my-1 text-danger">{{ $nbUser }}</h4>
+                                    <p class="mb-0 font-13">Total</p>
                                 </div>
                                 <div class="widgets-icons-2 rounded-circle bg-gradient-bloody text-white ms-auto"><i class='bx bxs-user'></i>
                                 </div>
@@ -42,8 +42,8 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <p class="mb-0 text-secondary">MFT Utilisateurs</p>
-                                    <h4 class="my-1 text-success">{{ $nbUser }}</h4>
+                                    <p class="mb-0 text-secondary">MFT NB-Commentaires</p>
+                                    <h4 class="my-1 text-success">{{ $nbComment }}</h4>
                                     <p class="mb-0 font-13">Total</p>
                                 </div>
                                 <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto"><i class='bx bxs-comment-dots '></i>
