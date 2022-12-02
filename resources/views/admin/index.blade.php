@@ -100,7 +100,8 @@
                     </div>
                 </div>
                 
-            </div><!--end row-->
+            </div>
+            <!--end row-->
         </div>
     </div>
 @endsection

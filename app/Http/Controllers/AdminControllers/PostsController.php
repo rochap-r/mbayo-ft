@@ -111,7 +111,6 @@ class PostsController extends Controller
 
     public function destroy(Post $post)
     {
-        $post->tags()->delete();
         $post->delete();
         return redirect()->route('admin.posts.index')->with('success','L\'article a été supprimé avec succès!');
     }
