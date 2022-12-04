@@ -40,16 +40,6 @@ class AppServiceProvider extends ServiceProvider
         $about=AboutConfig::find(1);
         View::share('about',$about);
 
-        //les données d'apropos
-        $choice=ChoiceConfig::find(1);
-        View::share('choice',$choice);
-
-        //les données d'images d'arriere plan
-        $bg=BgConfig::find(1);
-        View::share('bg',$bg);
-
-        $teams = User::where('role_id', '<>', 1)->take(3)->get();
-        View::share('teams',$teams);
     
     }
 }
