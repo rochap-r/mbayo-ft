@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Config extends Model
 {
     use HasFactory;
-    protected $fillable = ['service_email', 'contact_email'];
+    protected $fillable = ['service_email', 'contact_email','clients','projets','recompenses'];
 }

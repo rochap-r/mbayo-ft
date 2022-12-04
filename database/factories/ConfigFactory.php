@@ -17,6 +17,9 @@ class ConfigFactory extends Factory
     public function definition()
     {
         return [
+            'clients'=>30,
+            'projets'=>15,
+            'recompenses'=>5,
             'contact_email'=>'rodriguechot@gmail.com',
             'service_email'=>'rodriguechot@gmail.com'
         ];

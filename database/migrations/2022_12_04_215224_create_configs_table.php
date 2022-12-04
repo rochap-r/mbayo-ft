@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
+            $table->integer('clients');
+            $table->integer('projets');
+            $table->integer('recompenses');
             $table->string('service_email');
             $table->string('contact_email');
             $table->timestamps();
