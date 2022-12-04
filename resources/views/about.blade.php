@@ -8,14 +8,13 @@
     @section('custom_css')
     <style>
         .bg-header{
-            background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset($about->bg_image) }}") center center no-repeat;
+            background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset($bg->about_bg_image) }}") center center no-repeat;
             background-size: cover;
         }
         
     </style>
-@endsection
+    @endsection
 
-    <!-- content section -->
     @section('content')
             <div class="container-fluid bg-primary py-5 bg-header" >
                 <div class="row py-5">

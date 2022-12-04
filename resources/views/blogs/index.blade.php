@@ -3,6 +3,16 @@
     <!-- title section -->
     @section('title','mbayo-ft.com | FT-Infos+ Actualités à la une!')
 
+    @section('custom_css')
+    <style>
+        .bg-header{
+            background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset($bg->mft_bg_image) }}") center center no-repeat;
+            background-size: cover;
+        }
+        
+    </style>
+    @endsection
+
     <!-- content section -->
     @section('content')
                 <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">

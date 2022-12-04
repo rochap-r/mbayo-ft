@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('adress');
             $table->string('footerDescription');
-            $table->string('bg_image');
             $table->timestamps();
         });
     }

@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('about_configs', function (Blueprint $table) {
+        Schema::create('bg_configs', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->string('image');
-            $table->string('caracteristique1');
-            $table->string('caracteristique2');
-            $table->string('caracteristique3');
-            $table->string('caracteristique4');
+            $table->string('mft_bg_image');
+            $table->string('service_bg_image');
+            $table->string('contact_bg_image');
+            $table->string('about_bg_image');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('about_configs');
+        Schema::dropIfExists('bg_configs');
     }
 };

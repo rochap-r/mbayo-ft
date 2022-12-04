@@ -24,8 +24,7 @@ class AboutConfigFactory extends Factory
             'caracteristique2'=>'Personnel professionnel',
             'caracteristique3'=>'Assistance 24h/24 et 7j/7',
             'caracteristique4'=>'Des prix équitables',
-            'image'=>'mft_template/img/about.jpg',
-            'bg_image'=>'mft_template/img/carousel-1.jpg'
+            'image'=>'mft_template/img/about.jpg'
         ];
     }
 }

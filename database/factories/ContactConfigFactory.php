@@ -19,7 +19,6 @@ class ContactConfigFactory extends Factory
         return [
             'title'=>'Si vous avez des questions, n\'hésitez pas à nous contacter',
             'tel'=>'+243 89 599 41 97',
-            'bg_image'=>'mft_template/img/carousel-1.jpg',
             'email'=>'contact@mbayo-ft.com',
             'adress'=>'123, 30/juin, KZI, RDC',
             'footerDescription'=>'Bienvenu chez mbayo-FT, 

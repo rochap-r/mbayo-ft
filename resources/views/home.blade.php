@@ -109,7 +109,7 @@
                             <h4 class="text-primary mb-0">{{ $contact->tel }}</h4>
                         </div>
                     </div>
-                    <a href="{{ route('service.index') }}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Demander un service</a>
+                    <a href="{{ route('service.index') }}#services" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Demander un service</a>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -127,7 +127,7 @@
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Pourquoi nous choisir</h5>
-                <h1 class="mb-0">Nous sommes là pour faire croître votre entreprise de façon exponentielle</h1>
+                <h1 class="mb-0">{{ $choice->title }}</h1>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4">
@@ -137,20 +137,20 @@
                                 <i class="fa fa-cubes text-white"></i>
                             </div>
                             <h4>Meilleur de l'industrie</h4>
-                            <p class="mb-0">Nous nous adaptons aux normes Industrielles pour offrir de services de haute qualité</p>
+                            <p class="mb-0">{{ $choice->quality }}</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-award text-white"></i>
                             </div>
                             <h4>Reconpenses</h4>
-                            <p class="mb-0">Nos services de hautes qualités, nous offre de grandes recompenses!</p>
+                            <p class="mb-0">{{ $choice->recompense }}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset('mft_template/img/feature.jpg')}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset($choice->image)}}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -160,14 +160,14 @@
                                 <i class="fa fa-users-cog text-white"></i>
                             </div>
                             <h4>Personnel professionnel</h4>
-                            <p class="mb-0">Notre personnel est selectionné sur principe de meritocratie que du favoritisme</p>
+                            <p class="mb-0">{{ $choice->personel }}</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                 <i class="fa fa-phone-alt text-white"></i>
                             </div>
                             <h4>Assistance 24h/24 et 7j/7</h4>
-                            <p class="mb-0">Un facteur clé pour nous, afin de favoriser votre maximisation dans votre production</p>
+                            <p class="mb-0">{{ $choice->assistance }}</p>
                         </div>
                     </div>
                 </div>
@@ -223,13 +223,14 @@
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Membres de l'équipe</h5>
-                <h1 class="mb-0">L'Expertise  professionnel prêt à aider votre entreprise</h1>
+                <h1 class="mb-0">{{ $choice->team_title }}</h1>
             </div>
             <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                @forelse ($teams as $team)
+                   <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light rounded overflow-hidden">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('mft_template/img/team-1.jpg')}}" alt="">
+                            <img class="img-fluid w-100" src="{{ asset('storage/'.$team->image->path) }}" alt="">
                             <div class="team-social">
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -238,45 +239,15 @@
                             </div>
                         </div>
                         <div class="text-center py-4">
-                            <h4 class="text-primary">Xavier K</h4>
-                            <p class="text-uppercase m-0">CD Sécurité</p>
+                            <h4 class="text-primary">{{ $team->name }}</h4>
+                            <p class="text-uppercase m-0">MFT Equipe</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('mft_template/img/team-2.jpg')}}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">RUTH R</h4>
-                            <p class="text-uppercase m-0">CD Expertise Comptable</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{asset('mft_template/img/team-3.jpg')}}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">Robert M</h4>
-                            <p class="text-uppercase m-0">CD Expertise Géologique</p>
-                        </div>
-                    </div>
-                </div>
+                </div> 
+                @empty
+                    
+                @endforelse
+                
             </div>
         </div>
     </div>

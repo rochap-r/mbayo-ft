@@ -4,6 +4,15 @@
 
 <!-- title section -->
 @section('title',$post->title)
+@section('custom_css')
+    <style>
+        .bg-header{
+            background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset($bg->mft_bg_image) }}") center center no-repeat;
+            background-size: cover;
+        }
+        
+    </style>
+@endsection
 
 <!-- content section -->
 @section('content')

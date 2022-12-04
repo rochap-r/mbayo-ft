@@ -17,6 +17,5 @@ class AboutConfig extends Model
         'caracteristique3',
         'caracteristique4',
         'image',
-        'bg_image'
     ];
 }

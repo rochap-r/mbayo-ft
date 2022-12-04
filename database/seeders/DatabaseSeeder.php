@@ -4,17 +4,20 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\AboutConfig;
 use App\Models\Post;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Image;
+use App\Models\Config;
 use App\Models\Comment;
 use App\Models\Service;
 use App\Models\Category;
-use App\Models\ContactConfig;
 use App\Models\Permission;
+use App\Models\AboutConfig;
+use App\Models\BgConfig;
 use App\Models\UserComment;
+use App\Models\ChoiceConfig;
+use App\Models\ContactConfig;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
@@ -71,14 +74,17 @@ class DatabaseSeeder extends Seeder
 
         Role::where('name','admin')->first()->permissions()->sync($permissions_id);
 
-        $users=User::factory(10);
+        
 
-        User::factory()->create([
+        $admin=User::factory()->create([
             'name'=>'rodrigue',
             'email'=>'rodriguechot@gmail.com',
             'role_id'=>2
         ]);
+        $admin->image()->save(Image::factory()->make());
 
+        $users=User::factory(10)->create();
+        
         foreach($users as $user){
             $user->image()->save(Image::factory()->make());
         }
@@ -107,6 +113,9 @@ class DatabaseSeeder extends Seeder
         // generation de données configurable
         ContactConfig::factory(1)->create();
         AboutConfig::factory(1)->create();
+        ChoiceConfig::factory(1)->create();
+        Config::factory(1)->create();
+        BgConfig::factory(1)->create();
 
     }
 }

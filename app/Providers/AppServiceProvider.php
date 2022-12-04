@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 use App\Models\AboutConfig;
+use App\Models\BgConfig;
+use App\Models\ChoiceConfig;
 use App\Models\ContactConfig;
+use App\Models\User;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -36,5 +39,8 @@ class AppServiceProvider extends ServiceProvider
         //les données d'apropos
         $about=AboutConfig::find(1);
         View::share('about',$about);
+
+
+    
     }
 }
