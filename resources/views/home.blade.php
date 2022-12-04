@@ -48,7 +48,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Clients satisfaits</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $count->clients }}</h1>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-primary mb-0">Projets réalisés</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">12</h1>
+                            <h1 class="mb-0" data-toggle="counter-up">{{ $count->projets }}</h1>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Recompenses</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $count->recompenses }}</h1>
                         </div>
                     </div>
                 </div>

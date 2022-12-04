@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\AboutConfig;
 use App\Models\BgConfig;
 use App\Models\ChoiceConfig;
+use App\Models\Config;
 use App\Models\ContactConfig;
 use App\Models\User;
 use Illuminate\Pagination\Paginator;
@@ -47,6 +48,10 @@ class AppServiceProvider extends ServiceProvider
         //les données d'images d'arriere plan
         $bg=BgConfig::find(1);
         View::share('bg',$bg);
+
+        //les compteurs
+        $count = Config::find(1);
+        View::share('count',$count);
 
         $teams = User::where('role_id', '<>', 1)->take(3)->get();
         View::share('teams',$teams);
