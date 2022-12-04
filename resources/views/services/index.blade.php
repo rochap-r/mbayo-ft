@@ -3,10 +3,19 @@
 
 <!-- title section -->
 @section('title','mbayo-ft.com | Découvrez nos services')
+@section('custom_css')
+    <style>
+        .bg-header{
+           background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset('mft_template/img/carousel-2.jpg') }}") center center no-repeat;
+            background-size: cover;
+        }
+        
+    </style>
+@endsection
 
 <!-- content section -->
 @section('content')
-    <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+    <div class="container-fluid bg-primary py-5 bg-header">
         <div class="row py-5">
             <div class="col-12 pt-lg-5 mt-lg-5 text-center">
                 <h1 class="display-4 text-white animated zoomIn">Services</h1>

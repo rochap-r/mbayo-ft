@@ -87,17 +87,17 @@
                 <div class="col-lg-7">
                     <div class="section-title position-relative pb-3 mb-5">
                         <h5 class="fw-bold text-primary text-uppercase">À propos de nous</h5>
-                        <h1 class="mb-0">La meilleure solution de services avec une experience de 10 ans</h1>
+                        <h1 class="mb-0">{{ $about->title }}</h1>
                     </div>
-                    <p class="mb-4">Nous offrons des sevices de meilleure qualité dans divers domaines tel qu'en sécurité personnelle et industrielle, Expertise Comptable et Expertise en Ingénierie Géologique.</p>
+                    <p class="mb-4">{{ $about->decription }}</p>
                     <div class="row g-0 mb-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Récompensés</h5>
-                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Personnel professionnel</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>{{ $about->caracteristique1 }}</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>{{ $about->caracteristique2 }}</h5>
                         </div>
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Assistance 24h/24 et 7j/7</h5>
-                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Des prix équitables</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>{{ $about->caracteristique3 }}</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>{{ $about->caracteristique4 }}</h5>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
@@ -106,14 +106,14 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="mb-2">Entrez en contact avec nous</h5>
-                            <h4 class="text-primary mb-0">+243 89 599 41 97</h4>
+                            <h4 class="text-primary mb-0">{{ $contact->tel }}</h4>
                         </div>
                     </div>
-                    <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Demander un service</a>
+                    <a href="{{ route('service.index') }}" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Demander un service</a>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset('mft_template/img/about.jpg')}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset($about->image)}}" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -208,7 +208,7 @@
                     <div class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
                         <h3 class="text-white mb-3">Nous contacter</h3>
                         <p class="text-white mb-3">Pour plus des precisions, appeler nous au numero ci-dessous</p>
-                        <h2 class="text-white mb-0">+243 89 599 41 97</h2>
+                        <h2 class="text-white mb-0">{{ $contact->tel }}</h2>
                     </div>
                 </div>
             </div>

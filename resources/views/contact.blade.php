@@ -4,10 +4,19 @@
 
 <!-- title section -->
 @section('title','mbayo-ft.com | Contactez-nous')
+@section('custom_css')
+    <style>
+        .bg-header{
+            background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset($contact->bg_image) }}") center center no-repeat;
+            background-size: cover;
+        }
+        
+    </style>
+@endsection
 
 <!-- content section -->
 @section('content')
-            <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="container-fluid bg-primary py-5 bg-header">
                 <div class="row py-5">
                     <div class="col-12 pt-lg-5 mt-lg-5 text-center">
                         <h1 class="display-4 text-white animated zoomIn">Contactez-nous</h1>
@@ -25,7 +34,7 @@
             <div class="container py-5">
                 <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                     <h5 class="fw-bold text-primary text-uppercase">Nous contacter</h5>
-                    <h1 class="mb-0">Si vous avez des questions, n'hésitez pas à nous contacter</h1>
+                    <h1 class="mb-0">{{ $contact->title }}</h1>
                 </div>
                 <div class="row g-5 mb-5">
                     <div class="col-lg-4">
@@ -35,7 +44,7 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="mb-2">Appelez pour vos questions</h5>
-                                <h4 class="text-primary mb-0">+243 89 599 41 97</h4>
+                                <h4 class="text-primary mb-0">{{ $contact->tel }}7</h4>
                             </div>
                         </div>
                     </div>
@@ -46,7 +55,7 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="mb-2">E-mail de contact</h5>
-                                <h4 class="text-primary mb-0">contact@mbayo-ft.com</h4>
+                                <h4 class="text-primary mb-0">{{ $contact->email }}</h4>
                             </div>
                         </div>
                     </div>
@@ -57,7 +66,7 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="mb-2">Visitez notre bureau</h5>
-                                <h4 class="text-primary mb-0">123, 30/juin, KZI, RDC</h4>
+                                <h4 class="text-primary mb-0">{{ $contact->adress }}</h4>
                             </div>
                         </div>
                     </div>
