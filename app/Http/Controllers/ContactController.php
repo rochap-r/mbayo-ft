@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Contact;
+use App\Models\Config;
 use App\Models\Contact as ModelsContact;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -38,7 +39,9 @@ class ContactController extends Controller
 
             ModelsContact::create($attributes);
 
-            if (Mail::to(env('ADMIN_CONTACT_EMAIL'))->send(new Contact(
+            $email = Config::find(1)->contact_email;
+            
+            if (Mail::to($email)->send(new Contact(
                 $attributes['name'],
                 $attributes['email'],
                 $attributes['subject'],

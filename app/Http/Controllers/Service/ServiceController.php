@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Service;
 
-use App\Http\Controllers\Controller;
-use App\Mail\AskService;
+use App\Models\Config;
 use App\Models\Service;
+use App\Mail\AskService;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -51,7 +52,8 @@ class ServiceController extends Controller
 
             $info=\App\Models\AskService::create($attributes);
 
-            if (Mail::to(env('ADMIN_EMAIL'))->send(new AskService(
+            $email = Config::find(1)->service_email;
+            if (Mail::to($email)->send(new AskService(
                 $attributes['name'],
                 $attributes['email'],
                 $info->service->title,
