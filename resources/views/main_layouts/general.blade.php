@@ -48,9 +48,9 @@
     <div class="row gx-0">
         <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
-                <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>123, 30/juin, KZI, RDC</small>
-                <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+243 89 599 41 97</small>
-                <small class="text-light"><i class="fa fa-envelope-open me-2"></i>contact@mbayo-ft.com</small>
+                <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>{{ $contact->adress }}</small>
+                <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>{{ $contact->tel }}</small>
+                <small class="text-light"><i class="fa fa-envelope-open me-2"></i>{{ $contact->email }}</small>
             </div>
         </div>
         <div class="col-lg-4 text-center text-lg-end">
@@ -114,14 +114,12 @@
                         <h1 class="m-0 text-white"><i class=" me-2"></i>Mbayo-FT</h1>
                     </a>
                     <p class="mt-3 mb-4">
-                        Abonnez-vous à notre Newsletter pour recevoir nos dernières nouvelles et actualités.
+                        {{ $contact->footerDescription }}    
                     </p>
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control border-white p-3" placeholder="Votre e-mail">
-                            <button class="btn btn-dark">S'inscrire</button>
-                        </div>
-                    </form>
+                    <div class="badge badge-primary">
+                        <p class="text-white lead">E-mail: {{ $contact->email }}</p>
+                        <p class="text-white lead">Tel: {{ $contact->tel }}</p>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-8 col-md-6">
@@ -132,15 +130,15 @@
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-geo-alt text-primary me-2"></i>
-                            <p class="mb-0">123 Du 30/Juin, Kolwezi, RDC</p>
+                            <p class="mb-0">{{ $contact->adress }}</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-envelope-open text-primary me-2"></i>
-                            <p class="mb-0">info@mbayo-ft.com</p>
+                            <p class="mb-0">{{ $contact->email }}</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-telephone text-primary me-2"></i>
-                            <p class="mb-0">+243 89 599 41 97</p>
+                            <p class="mb-0">{{ $contact->tel }}</p>
                         </div>
                         <div class="d-flex mt-4">
                             <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>

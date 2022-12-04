@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\AboutConfig;
 use App\Models\Post;
 use App\Models\Role;
 use App\Models\User;
@@ -10,6 +12,7 @@ use App\Models\Image;
 use App\Models\Comment;
 use App\Models\Service;
 use App\Models\Category;
+use App\Models\ContactConfig;
 use App\Models\Permission;
 use App\Models\UserComment;
 use Illuminate\Database\Seeder;
@@ -101,6 +104,9 @@ class DatabaseSeeder extends Seeder
             $service->image()->save(Image::factory()->make());
         }
 
+        // generation de données configurable
+        ContactConfig::factory(1)->create();
+        AboutConfig::factory(1)->create();
 
     }
 }

@@ -3,14 +3,24 @@
 @extends('main_layouts.general')
 
 <!-- title section -->
-@section('title','mbayo-ft.com | FT-INFO | '.$service->title)
+@section('title',$service->title)
+
+@section('custom_css')
+    <style>
+        .bg-header{
+           background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset('mft_template/img/carousel-2.jpg') }}") center center no-repeat;
+            background-size: cover;
+        }
+        
+    </style>
+@endsection
 
 <!-- content section -->
 @section('content')
-    <div class="container-fluid bg-primary py-5  bg-header" style="margin-bottom: 90px;">
+    <div class="container-fluid bg-primary py-5  bg-header" >
         <div class="row py-5">
             <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                <h1 class="display-4 text-white animated zoomIn">MFT | {{ $service->title }}</h1>
+                <h1 class="display-4 text-white animated zoomIn">{{ $service->title }}</h1>
                 <a href="{{ route('home') }}" class="h5 text-white">Mbayo-FT</a>
                 <i class="far fa-circle text-white px-2"></i>
                 <a href="{{ route('service.index') }}" class="h5 text-white">MFT Service</a>
@@ -24,7 +34,7 @@
                 <div class="col-lg-11 ">
                     <!-- Blog Detail Start -->
                     <div class="mb-5">
-                        <img class="img-fluid w-100 rounded mb-5 " id="service_img"  src="{{ $service->image ? asset('storage/'.$service->image->path.'') : 'https://via.placeholder.com/600x400?text=mbayo-ft.com' }}" alt="">
+                        <img class="img-fluid rounded mb-5 w-100" id="service_img"   src="{{ $service->image ? asset('storage/'.$service->image->path.'') : 'https://via.placeholder.com/600x400?text=mbayo-ft.com' }}" alt="">
                         <h1 class="mb-4 text-primary">{{ $service->title }}</h1>
                         <p class="mb-3 text-lg text-uppercase fw-bold">
                             <a href="{{ route('service.index') }}#services" class="btn btn-sm btn-outline-success fw-bold"><i class="fa fa-phone-square"></i> nous contacter pour ce service</a>&nbsp;
