@@ -82,20 +82,18 @@
 
                 <hr>
 
+
                 <li>
-                    <a href="javascript:;" class="has-arrow">
-                        <div class="parent-icon">
-                            <i class='bx bxs-key '></i>
-                        </div>
-                        <div class="menu-title">Roles</div>
+                    <a href="#" class="has-arrow"> 
+                        <div class="parent-icon"><i class='bx bx-mail-send'></i></div>
+                        <div class="menu-title">Contacts</div>
                     </a>
 
                     <ul>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Tous les Roles</a>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Visiteurs</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Nouveau Role</a>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Services</a>
                         </li>
-
                     </ul>
                 </li>
 
@@ -117,16 +115,40 @@
                 </li>
 
                 <li>
-                    <a href="#" >
-                        <div class="parent-icon"><i class='bx bx-mail-send'></i></div>
-                        <div class="menu-title">Contacts</div>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon">
+                            <i class='bx bxs-key '></i>
+                        </div>
+                        <div class="menu-title">Roles</div>
                     </a>
+
+                    <ul>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Tous les Roles</a>
+                        </li>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Nouveau Role</a>
+                        </li>
+
+                    </ul>
                 </li>
+
                 <li>
-                    <a href="#" >
-                        <div class="parent-icon"><i class='bx bx-abacus'></i></div>
-                        <div class="menu-title">Parametre </div>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon"><i class='bx bx-cog'></i></div>
+                        <div class="menu-title">Paramètres</div>
                     </a>
+
+                    <ul>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Apropos</a>
+                        </li>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Configuration</a>
+                        </li>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Contact</a>
+                        </li>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Nous choisir</a>
+                        </li>
+                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Fonds d'écrans</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="{{ route('home') }}" target="_blank">
