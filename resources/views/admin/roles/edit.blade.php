@@ -1,5 +1,5 @@
 
-@extends("admin_dashboard.layouts.app")
+@extends("admin.layouts.app")
 @section('style')
     <style>
         .perrmissions{
@@ -24,7 +24,7 @@
         <div class="page-content">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">Roles</div>
+                <div class="breadcrumb-title pe-3">Roles d'utilisateurs</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
@@ -39,10 +39,11 @@
                         <button type="button" class="btn btn-primary">Settings</button>
                         <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-                            <a class="dropdown-item" href="javascript:;">Another action</a>
-                            <a class="dropdown-item" href="javascript:;">Something else here</a>
-                            <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	
+                            <a class="dropdown-item" href="javascript:;">Action</a>
+                            <a class="dropdown-item" href="{{route('admin.roles.index')}}">Voir les roles</a>
+                            <a class="dropdown-item" href="{{route('admin.roles.create')}}">Créer un role</a>
+                            <div class="dropdown-divider"></div>	<a class="dropdown-item" href="{{ route('admin.index') }}">Administration</a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +63,7 @@
                                     <div class="border border-3 p-4 rounded">
                                         <div class="mb-3">
                                             <label for="inputProductTitle" class="form-label">Nom du role</label>
-                                            <input type="text" value="{{ old('name',$role->name) }}" name="name" required class="form-control" id="inputProductTitle" placeholder="Tapez le titre de l'article">
+                                            <input type="text" value="{{ old('name',$role->name) }}" name="name" required class="form-control" id="inputProductTitle" placeholder="Tapez le titre du role">
                                             @error('name')
                                             <p class="text-danger">{{ $message }}</p>
                                             @enderror

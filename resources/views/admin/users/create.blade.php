@@ -1,8 +1,8 @@
-@extends("admin_dashboard.layouts.app")
+@extends("admin.layouts.app")
 
 @section("style")
-    <link href="{{ asset('admin_dashboard_assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('admin_dashboard_assets/plugins/select2/css/select2-bootstrap4.css')}}" rel="stylesheet" />
+    <link href="{{ asset('admin/plugins/select2/css/select2.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('admin/plugins/select2/css/select2-bootstrap4.css')}}" rel="stylesheet" />
 
     <style>
         .imageuploadfy{
@@ -119,7 +119,7 @@
 @endsection
 
 @section("script")
-    <script src="{{ asset('admin_dashboard_assets/plugins/select2/js/select2.min.js')}}"></script>
+    <script src="{{ asset('admin/plugins/select2/js/select2.min.js')}}"></script>
     <script>
         $(document).ready(function () {
 

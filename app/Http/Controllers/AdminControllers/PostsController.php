@@ -39,7 +39,7 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $validated=$request->validate($this->rules);
-        $user=User::with('role')->find(auth()->id());
+
         if($request->approved===null){
             $validated['approved']=0;
         }else{
@@ -85,7 +85,9 @@ class PostsController extends Controller
         $this->rules['thumbnail'] = 'nullable|file|mimes:jpg,png,webp,svg,jpeg|dimensions:max_width=800,max_height=400';
 
         $validated=$request->validate($this->rules);
-        $user=User::with('role')->find(auth()->id());
+
+       
+
         if($request->approved===null){
             $validated['approved']=0;
         }else{

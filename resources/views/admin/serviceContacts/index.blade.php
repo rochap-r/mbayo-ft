@@ -10,7 +10,7 @@
         <div class="page-content">
             <!--breadcrumb  video 72 contact-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-                <div class="breadcrumb-title pe-3">Contacts de Visiteurs</div>
+                <div class="breadcrumb-title pe-3">Contacts de Clients</div>
                 <div class="ps-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
@@ -44,22 +44,22 @@
                                         <tr>
                                             <th>Nom</th>
                                             <th>Email</th>
-                                            <th>Sujet</th>
+                                            <th>Service</th>
                                             <th>Message</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($contacts as $contact)
+                                        @foreach($askServices as $contact)
                                             <tr>
                                                 <td>{{$contact->name}}</td>
                                                 <td>{{$contact->email}}</td>
-                                                <td>{{$contact->subject}}</td>
+                                                <td>{{$contact->service->title}}</td>
                                                 <td>{{ \Str::limit($contact->body,60) }}</td>
                                                 <td>
                                                     <div class="d-flex order-actions">
                                                         <a href="#" onclick="event.preventDefault(); document.getElementById('delete_form_{{ $contact->id }}').submit()" class="ms-3 text-danger"><i class='bx bxs-trash'></i></a>
-                                                        <form action="{{ route('admin.contacts.destroy',$contact) }}" id="delete_form_{{ $contact->id }}" method="POST">
+                                                        <form action="{{ route('admin.serviceContact.destroy',$contact) }}" id="delete_form_{{ $contact->id }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                         </form>

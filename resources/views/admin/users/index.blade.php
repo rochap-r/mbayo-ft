@@ -1,4 +1,4 @@
-@extends("admin_dashboard.layouts.app")
+@extends("admin.layouts.app")
 
 @section("wrapper")
     <!--start page wrapper -->
@@ -62,7 +62,7 @@
                                                 <input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
                                             </div>
                                             <div class="ms-2">
-                                                <h6 class="mb-0 font-14">CAT#-{{ $user->id }}</h6>
+                                                <h6 class="mb-0 font-14">#-{{ $user->id }}</h6>
                                             </div>
                                         </div>
                                     </td>

@@ -11,7 +11,8 @@ class AboutConfig extends Model
     
     protected $fillable=
     [
-        'title','description',
+        'title',
+        'description',
         'caracteristique1',
         'caracteristique2',
         'caracteristique3',

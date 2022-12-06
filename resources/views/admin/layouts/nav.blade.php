@@ -2,7 +2,7 @@
 <div class="sidebar-wrapper" data-simplebar="true">
             <div class="sidebar-header">
                 <div>
-                    <h4 class="logo-text"><a href="{{route('home')}}">MFT | ADMIN</a></h4>
+                    <h4 class="logo-text"><a href="{{route('admin.index')}}">MFT | ADMIN</a></h4>
                 </div>
                 <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
                 </div>
@@ -90,9 +90,9 @@
                     </a>
 
                     <ul>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Visiteurs</a>
+                        <li> <a href="{{ route('admin.contacts.index') }}"><i class="bx bx-arrow-to-right"></i>Visiteurs</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Services</a>
+                        <li> <a href="{{ route('admin.serviceContact.index') }}"><i class="bx bx-arrow-to-right"></i>Services</a>
                         </li>
                     </ul>
                 </li>
@@ -106,9 +106,9 @@
                     </a>
 
                     <ul>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Tous les utilisateurs</a>
+                        <li> <a href="{{ route('admin.users.index') }}"><i class="bx bx-arrow-to-right"></i>Tous les utilisateurs</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Nouveau utilisateur</a>
+                        <li> <a href="{{ route('admin.users.create') }}"><i class="bx bx-arrow-to-right"></i>Nouveau utilisateur</a>
                         </li>
 
                     </ul>
@@ -123,9 +123,9 @@
                     </a>
 
                     <ul>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Tous les Roles</a>
+                        <li> <a href="{{ route('admin.roles.index') }}"><i class="bx bx-arrow-to-right"></i>Tous les Roles</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Nouveau Role</a>
+                        <li> <a href="{{ route('admin.roles.create') }}"><i class="bx bx-arrow-to-right"></i>Nouveau Role</a>
                         </li>
 
                     </ul>
@@ -138,7 +138,7 @@
                     </a>
 
                     <ul>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Apropos</a>
+                        <li> <a href="{{ route('admin.about.edit') }}"><i class="bx bx-arrow-to-right"></i>Apropos</a>
                         </li>
                         <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Configuration</a>
                         </li>
