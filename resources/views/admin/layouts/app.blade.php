@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="{{ asset('admin/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/css/header-colors.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/css/myStyle.css') }}" />
-    <title>mbayo-ft.com|Admin</title>
+    <title>mbayo-ft.com | Admin</title>
 </head>
 
 <body>

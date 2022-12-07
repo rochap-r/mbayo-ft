@@ -83,15 +83,15 @@ class DatabaseSeeder extends Seeder
         ]);
         $admin->image()->save(Image::factory()->make());
 
+        Category::factory(1)->create(['name'=>'sans-categorie']);
+
+        /*
         $users=User::factory(10)->create();
         
         foreach($users as $user){
             $user->image()->save(Image::factory()->make());
         }
-
         Category::factory(10)->create();
-        Category::factory(1)->create(['name'=>'sans-categorie']);
-
         $userComments=UserComment::factory(10)->create();
         foreach($userComments as $user){
             $user->image()->save(Image::factory()->make());
@@ -109,6 +109,7 @@ class DatabaseSeeder extends Seeder
         foreach($services as $service){
             $service->image()->save(Image::factory()->make());
         }
+        */
 
         // generation de données configurable
         ContactConfig::factory(1)->create();
