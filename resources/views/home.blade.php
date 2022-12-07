@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset($choice->image)}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset('storage/'.$choice->image)}}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -160,7 +160,7 @@
                                 <i class="fa fa-users-cog text-white"></i>
                             </div>
                             <h4>Personnel professionnel</h4>
-                            <p class="mb-0">{{ $choice->personel }}</p>
+                            <p class="mb-0">{{ $choice->personnel }}</p>
                         </div>
                         <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
                             <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">

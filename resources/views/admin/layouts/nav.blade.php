@@ -144,7 +144,7 @@
                         </li>
                         <li> <a href="{{ route('admin.contact.edit') }}"><i class="bx bx-arrow-to-right"></i>Contact</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Nous choisir</a>
+                        <li> <a href="{{ route('admin.choice.edit') }}"><i class="bx bx-arrow-to-right"></i>Nous choisir</a>
                         </li>
                         <li> <a href="{{ route('admin.bgConfig.edit') }}"><i class="bx bx-arrow-to-right"></i>Fonds d'écrans</a>
                         </li>

@@ -34,6 +34,10 @@ class AboutConfigController extends Controller
             if(!Storage::disk('public')->exists($folder)){
                 Storage::disk('public')->makeDirectory($folder);
             }
+            $deletePath = AboutConfig::find(1)->image;
+            if ($deletePath !== null && Storage::disk('public')->exists($deletePath)) {
+                Storage::disk('public')->delete($deletePath);
+            }
             $path=$about_image->store($folder,'public');
             $validated['image']=$path;
         }
