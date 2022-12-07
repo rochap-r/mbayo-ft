@@ -7,7 +7,7 @@
 @section('custom_css')
     <style>
         .bg-header{
-            background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset($bg->contact_bg_image) }}") center center no-repeat;
+            background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url("{{ asset('storage/'.$bg->contact_bg_image) }}") center center no-repeat;
             background-size: cover;
         }
         
@@ -44,7 +44,7 @@
                             </div>
                             <div class="ps-4">
                                 <h5 class="mb-2">Appelez pour vos questions</h5>
-                                <h4 class="text-primary mb-0">{{ $contact->tel }}7</h4>
+                                <h4 class="text-primary mb-0">{{ $contact->tel }}</h4>
                             </div>
                         </div>
                     </div>

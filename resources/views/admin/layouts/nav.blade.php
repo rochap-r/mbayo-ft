@@ -140,13 +140,13 @@
                     <ul>
                         <li> <a href="{{ route('admin.about.edit') }}"><i class="bx bx-arrow-to-right"></i>Apropos</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Configuration</a>
+                        <li> <a href="{{ route('admin.config.edit') }}"><i class="bx bx-arrow-to-right"></i>Configuration</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Contact</a>
+                        <li> <a href="{{ route('admin.contact.edit') }}"><i class="bx bx-arrow-to-right"></i>Contact</a>
                         </li>
                         <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Nous choisir</a>
                         </li>
-                        <li> <a href="#"><i class="bx bx-arrow-to-right"></i>Fonds d'écrans</a>
+                        <li> <a href="{{ route('admin.bgConfig.edit') }}"><i class="bx bx-arrow-to-right"></i>Fonds d'écrans</a>
                         </li>
                     </ul>
                 </li>

@@ -42,7 +42,7 @@
                                 <div class="col-lg-12">
                                     <div class="border border-3 p-4 rounded">
                                         <div class="mb-3">
-                                            <label for="inputProductTitle" class="form-label">Limace d'article (Slug)</label>
+                                            <label for="inputProductTitle" class="form-label">Le Titre en bas d'A-propos de nous</label>
                                             <input type="text" name="title" value="{{ old('title',$about->title) }}"  required class="form-control" id="inputProductTitle" placeholder="Tapez le titre de l'à-propos!">
                                             @error('title')
                                             <p class="text-danger">{{ $message }}</p>
@@ -50,7 +50,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="description" class="form-label">Top Text</label>
+                                            <label for="description" class="form-label">Tapez la déscription d'A-propos</label>
                                             <textarea  required class="form-control" name="description"  id="description">
                                                 {{ old('description',$about->description) }}
                                             </textarea>
