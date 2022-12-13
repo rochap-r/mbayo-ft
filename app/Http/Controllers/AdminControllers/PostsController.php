@@ -105,14 +105,13 @@ class PostsController extends Controller
             if (!Storage::disk('public')->exists($folder)) {
                 Storage::disk('public')->makeDirectory($folder);
             }
-            $path=$thumbnail->store($folder,'public');
 
-            
-            $field = $post->image->path;
-            $deletePath = $field;
+            $deletePath = $post->image->path;
             if ($deletePath !== null && Storage::disk('public')->exists($deletePath)) {
                 Storage::disk('public')->delete($deletePath);
             }
+
+            $path=$thumbnail->store($folder,'public');
             $fileName=$thumbnail->getClientOriginalName();
             $extension=$thumbnail->getClientOriginalExtension();
             //création de l'image de l'article
