@@ -94,11 +94,13 @@ class UsersController extends Controller
         $user->update($validated);
         if ($request->has('image')){
             $image=$request->file('image');
+            
             $folder = 'teamImgs';
-            $field = $user->image->path;
             if (!Storage::disk('public')->exists($folder)) {
                 Storage::disk('public')->makeDirectory($folder);
             }
+
+            $field = $user->image->path;
             $deletePath = $field;
             if ($deletePath !== null && Storage::disk('public')->exists($deletePath)) {
                 Storage::disk('public')->delete($deletePath);

@@ -59,7 +59,7 @@
                     </div>
                     <div class="user-box dropdown">
                         <a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="{{asset('storage/'.auth()->user()->image->path)}}" class="user-img" alt="user avatar">
+                            <img src="{{auth()->user()->image ? asset('storage/'.auth()->user()->image->path) : asset('storage/placeholders/placeholder.jpg')}}" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
                                 <p class="user-name mb-0">{{ \Str::ucfirst(auth()->user()->name) }}</p>
                                 <p class="designattion mb-0">{{ \Str::ucfirst(auth()->user()->role->name) }}</p>
