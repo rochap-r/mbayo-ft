@@ -50,7 +50,7 @@
                                 </button>
                             </div>
                             <div class="mt-4 text-center">
-                                Vous n'avez pas de compte? <a href="{{route('register')}}">Créer une!</a>
+                                Vous n'avez pas de compte? <a href="{{route('register')}}">Créer un!</a>
                             </div>
                         </form>
                     </div>
