@@ -104,7 +104,7 @@
                                                         <div class="mb-3">
                                                             <select class="single-select" name="role_id" >
                                                                 @foreach($roles as $key=>$role)
-                                                                    <option value="{{ $key }} {{ $user->role_id===$key ? 'checked' : '' }}">{{ $role }}</option>
+                                                                <option {{ $user->role_id===$key ? 'selected':'' }} value="{{ $key }}">{{ $role }}</option>
                                                                 @endforeach
                                                             </select>
                                                             @error('role_id')

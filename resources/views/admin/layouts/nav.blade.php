@@ -82,7 +82,6 @@
 
                 <hr>
 
-
                 <li>
                     <a href="#" class="has-arrow"> 
                         <div class="parent-icon"><i class='bx bx-mail-send'></i></div>

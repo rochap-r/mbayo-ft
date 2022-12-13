@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -49,7 +50,11 @@ class PostsController extends Controller
         $post=Post::create($validated);
         if ($request->has('thumbnail')){
             $thumbnail=$request->file('thumbnail');
-            $path=$thumbnail->store('images','public');
+            $folder = 'images';
+            if (!Storage::disk('public')->exists($folder)) {
+                Storage::disk('public')->makeDirectory($folder);
+            }
+            $path=$thumbnail->store($folder,'public');
             $fileName=$thumbnail->getClientOriginalName();
             $extension=$thumbnail->getClientOriginalExtension();
             $post->image()->create([
@@ -82,7 +87,7 @@ class PostsController extends Controller
     public function update(Request $request, Post $post)
     {
         //la maj de la photo n'est obligatoire
-        $this->rules['thumbnail'] = 'nullable|file|mimes:jpg,png,webp,svg,jpeg|dimensions:max_width=800,max_height=400';
+        $this->rules['thumbnail'] = 'nullable|file|mimes:jpg,png,webp,svg,jpeg|dimensions:max_width=800,max_height=800';
 
         $validated=$request->validate($this->rules);
 
@@ -96,7 +101,18 @@ class PostsController extends Controller
         $post->update($validated);
         if ($request->has('thumbnail')){
             $thumbnail=$request->file('thumbnail');
-            $path=$thumbnail->store('images','public');
+            $folder = 'images';
+            if (!Storage::disk('public')->exists($folder)) {
+                Storage::disk('public')->makeDirectory($folder);
+            }
+            $path=$thumbnail->store($folder,'public');
+
+            
+            $field = $post->image->path;
+            $deletePath = $field;
+            if ($deletePath !== null && Storage::disk('public')->exists($deletePath)) {
+                Storage::disk('public')->delete($deletePath);
+            }
             $fileName=$thumbnail->getClientOriginalName();
             $extension=$thumbnail->getClientOriginalExtension();
             //création de l'image de l'article

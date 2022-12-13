@@ -80,7 +80,7 @@
                                                     <div class="border p-3 rounded">
                                                         <div class="mb-3">
                                                             <select class="single-select" name="category_id" >
-                                                                @foreach($categories as $key=>$categorie)
+                                                                @foreach($categories as $key => $categorie)
                                                                     <option {{ $post->category_id===$key ? 'selected':'' }} value="{{ $key }}">{{ $categorie }}</option>
                                                                 @endforeach
                                                             </select>

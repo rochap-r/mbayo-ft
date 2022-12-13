@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -16,7 +17,7 @@ class UsersController extends Controller
         'email'=>'required|email|unique:users,email',
         'password'=>'required|min:8|max:20',
         'role_id'=>'required|numeric',
-        'image'=>'nullable|file|mimes:jpg,png,webp;svg,jpeg|dimensions:max_width=500,max_height=300',
+        'image'=>'nullable|file|mimes:jpg,png,webp;svg,jpeg|dimensions:max_width=500,max_height=500',
     ];
 
     public function index()
@@ -44,7 +45,13 @@ class UsersController extends Controller
         $user=User::create($validated);
         if ($request->has('image')){
             $image=$request->file('image');
-            $path=$image->store('images','public');
+
+            $folder = 'teamImgs';
+            if (!Storage::disk('public')->exists($folder)) {
+                Storage::disk('public')->makeDirectory($folder);
+            }
+
+            $path=$image->store($folder,'public');
             $fileName=$image->getClientOriginalName();
             $extension=$image->getClientOriginalExtension();
             //création de l'image de l'article
@@ -87,11 +94,20 @@ class UsersController extends Controller
         $user->update($validated);
         if ($request->has('image')){
             $image=$request->file('image');
-            $path=$image->store('images','public');
+            $folder = 'teamImgs';
+            $field = $user->image->path;
+            if (!Storage::disk('public')->exists($folder)) {
+                Storage::disk('public')->makeDirectory($folder);
+            }
+            $deletePath = $field;
+            if ($deletePath !== null && Storage::disk('public')->exists($deletePath)) {
+                Storage::disk('public')->delete($deletePath);
+            }
+            $path=$image->store($folder,'public');
             $fileName=$image->getClientOriginalName();
             $extension=$image->getClientOriginalExtension();
             //création de l'image de l'article
-            $user->image()->create([
+            $user->image()->update([
                 'name'=>$fileName,
                 'extension'=>$extension,
                 'path'=>$path
