@@ -11,7 +11,7 @@
                 <?php $i=0; ?>
                 @foreach($services as $service)
                     <div  @if($i==0) class="carousel-item active" @else class="carousel-item "  @endif >
-                        <img class="w-100" src="{{asset('storage/'.$service->image->path)}}" alt="Image">
+                        <img class="w-100" src="{{$service->image : asset('storage/'.$service->image->path) : ''}}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">{{ $service->description }}</h5>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{asset('storage/'.$choice->image)}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="{{$choice->image ? asset('storage/'.$choice->image) : ''}}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-4">
