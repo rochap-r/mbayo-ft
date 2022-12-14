@@ -108,7 +108,6 @@ class ServicesController extends Controller
 
     public function destroy(Service $service)
     {
-        $service->tags()->delete();
         $service->delete();
         return redirect()->route('admin.services.index')->with('success','Le Service a été supprimé avec succès!');
     }
