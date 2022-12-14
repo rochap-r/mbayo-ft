@@ -53,7 +53,7 @@ class AppServiceProvider extends ServiceProvider
         $count = Config::find(1);
         View::share('count',$count);
 
-        $teams = User::where('role_id', '<>', 1)->take(3)->get();
+        $teams = User::where('role_id', '<>', 1)->take(4)->get();
         View::share('teams',$teams);
     
     }
