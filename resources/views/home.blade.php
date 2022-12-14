@@ -11,7 +11,7 @@
                 <?php $i=0; ?>
                 @foreach($services as $service)
                     <div  @if($i==0) class="carousel-item active" @else class="carousel-item "  @endif >
-                        <img class="w-100" src="{{$service->image : asset('storage/'.$service->image->path) : ''}}" alt="Image">
+                        <img class="w-100" src="{{ $service->image ? asset('storage/'.$service->image->path) : ''}}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown">{{ $service->description }}</h5>
